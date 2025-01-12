@@ -1,0 +1,16 @@
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/node"
+    }
+  ],
+  "build": {
+    "env": {
+      "DATABASE_URL": "seu-url-do-banco-de-dados"
+    },
+    "postbuild": [
+      "npx prisma generate"
+    ]
+  }
+}
