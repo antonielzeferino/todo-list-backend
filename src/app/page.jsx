@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -42,6 +43,7 @@ export default function Home() {
   
   return (
     <div className="container mx-auto p-4">
+      <Link href={"/images"}>add images</Link>
       <h1 className="text-3xl mb-4">Create User</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
