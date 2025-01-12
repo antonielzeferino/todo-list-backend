@@ -28,20 +28,18 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Defina uma função assíncrona
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('/api/users'); // Use GET para buscar dados
+        const response = await axios.get('/api/users');        
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users:', error.response?.data || error.message);
       }
     };
 
-    // Chame a função assíncrona
     fetchUsers();
-  }, []); // Dependência vazia para executar apenas uma vez
-
+  }, []);
+  
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl mb-4">Create User</h1>
