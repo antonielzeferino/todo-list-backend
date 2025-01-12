@@ -1,0 +1,10 @@
+{
+  "build": {
+    "env": {
+      "DATABASE_URL": "postgresql://fullstack_t7k8_user:CzgkDesZHSV7fxLipIZi7fBqWAksU93h@dpg-cu1bkrl2ng1s73ea739g-a.oregon-postgres.render.com/fullstack_t7k8"
+    },
+    "commands": [
+      "npx prisma generate"
+    ]
+  }
+}
