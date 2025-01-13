@@ -77,14 +77,15 @@ function UploadImage() {
       <button onClick={handleUpload}>Upload Image</button>
 
       {/* Exibindo as imagens já carregadas */}
-      <ul>
+      <ul className="flex flex-wrap gap-5">
         {images.map((image, index) => (
           <li key={index}>
             <Image 
-              src={image.url || nextlogo}
+              src={image.url}
               alt="Uploaded" 
               width={300} 
               height={300}
+              className="w-60 h-80"
             />
           </li>
         ))}
