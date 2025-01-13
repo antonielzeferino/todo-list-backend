@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import prisma from '@/lib/prisma';
+import { NextResponse } from "next/server";
+import prisma from "@/lib/prisma";
 
 export async function POST(request) {
   try {
@@ -7,7 +7,7 @@ export async function POST(request) {
 
     if (!url) {
       return NextResponse.json(
-        { error: 'URL is required' },
+        { error: "URL is required" },
         { status: 400 }
       );
     }
@@ -18,10 +18,10 @@ export async function POST(request) {
 
     return NextResponse.json(newImage, { status: 201 });
   } catch (error) {
-    console.error('Error processing request:', error);
+    console.error("Error processing request:", error);
 
     return NextResponse.json(
-      { error: 'Internal Server Error', details: error.message },
+      { error: "Internal Server Error", details: error.message },
       { status: 500 }
     );
   }
@@ -32,10 +32,10 @@ export async function GET() {
     const images = await prisma.image.findMany();
     return NextResponse.json(images, { status: 200 });
   } catch (error) {
-    console.error('Error fetching images:', error);
+    console.error("Error fetching images:", error);
 
     return NextResponse.json(
-      { error: 'Internal Server Error', details: error.message },
+      { error: "Internal Server Error", details: error.message },
       { status: 500 }
     );
   }
